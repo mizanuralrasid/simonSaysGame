@@ -6,8 +6,9 @@ let idx = [];
 let h2 = document.querySelector("h2");
 let btns = ["red", "green", "yellow", "purple"];
 let gbtn = document.querySelectorAll(".btn");
+let start = document.querySelector("button");
 
-document.addEventListener('keypress', () => {
+start.addEventListener('keypress', () => {
     started = true;
     levelUp();
 });
