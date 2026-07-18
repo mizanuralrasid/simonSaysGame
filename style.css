@@ -14,7 +14,6 @@ body {
     background: radial-gradient(circle at 30% 20%, #0f172a, #020617);
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     text-align: center;
-    padding: 1.5rem;
 }
 
 /* ----- heading styles ----- */
