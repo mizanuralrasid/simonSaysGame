@@ -8,7 +8,7 @@ let btns = ["red", "green", "yellow", "purple"];
 let gbtn = document.querySelectorAll(".btn");
 let start = document.querySelector("button");
 
-start.addEventListener('keypress', () => {
+start.addEventListener('click', () => {
     started = true;
     levelUp();
 });
