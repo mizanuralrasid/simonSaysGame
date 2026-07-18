@@ -132,6 +132,66 @@ h2 {
     opacity: 0;
 }
 
+/* ----- start button styling ----- */
+.start {
+    background: linear-gradient(135deg, #a5b4fc, #818cf8);
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 0.8rem 2.8rem;
+    border-radius: 60px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 8px 0 #4f46e5, 0 0 30px rgba(165, 180, 252, 0.3);
+    transition: all 0.15s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    margin: 0.5rem auto;
+    display: inline-block;
+}
+
+/* button hover effect */
+.start:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 0 #4f46e5, 0 0 50px rgba(165, 180, 252, 0.4);
+    background: linear-gradient(135deg, #b7c6ff, #9399ff);
+}
+
+/* button active (click) effect */
+.start:active {
+    transform: translateY(4px);
+    box-shadow: 0 4px 0 #4f46e5, 0 0 30px rgba(165, 180, 252, 0.2);
+}
+
+/* shine effect on hover */
+.start::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    pointer-events: none;
+}
+
+.start:hover::before {
+    left: 100%;
+}
+
+/* if the button is disabled or inactive */
+.start:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: 0 4px 0 #4f46e5;
+}
+
+
 /* ----- responsive adjustments ----- */
 @media (max-width: 620px) {
     .btn-container {
@@ -139,17 +199,31 @@ h2 {
         height: auto;
         width: 100%;
     }
+
     .btn {
         height: 130px;
         width: 130px;
     }
+
     h1 {
         font-size: 2.4rem;
     }
+
     h2 {
         font-size: 1rem;
         padding: 0.4rem 1.2rem;
         min-height: 2.8rem;
+    }
+
+    .start {
+        font-size: 1rem;
+        padding: 0.6rem 2rem;
+        box-shadow: 0 6px 0 #4f46e5;
+    }
+
+    .start:active {
+        transform: translateY(3px);
+        box-shadow: 0 3px 0 #4f46e5;
     }
 }
 
@@ -158,9 +232,11 @@ h2 {
         height: 100px;
         width: 100px;
     }
+
     .btn-container {
         gap: 20px;
     }
+
     h1 {
         font-size: 2rem;
     }
