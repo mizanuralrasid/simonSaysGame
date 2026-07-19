@@ -6,6 +6,7 @@
 }
 
 body {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,6 +14,7 @@ body {
     background: radial-gradient(circle at 30% 20%, #0f172a, #020617);
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     text-align: center;
+    padding: 1.5rem;
 }
 
 /* ----- heading styles ----- */
@@ -189,6 +191,61 @@ h2 {
     box-shadow: 0 4px 0 #4f46e5;
 }
 
+.gameOver {
+    background: red;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.msg {
+    position: absolute;
+    height: 300px;
+    width: 50%;
+    background-color: rgba(228, 218, 218, 0.664);
+    box-shadow: 4px 4px 80px white;
+    border-radius: 20px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 0;
+    transform: scale(0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.dsblMsg {
+    position: absolute;
+    height: 300px;
+    width: 50%;
+    background-color: rgba(245, 24, 24, 0.664);
+    box-shadow: 4px 4px 80px white;
+    border-radius: 20px;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    opacity: 1;
+    transform: scale(0.8);
+}
+
+.okBtn {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    right: 0px;
+    top: 0px;
+    font-size: large;
+    cursor: pointer;
+}
 
 /* ----- responsive adjustments ----- */
 @media (max-width: 620px) {
@@ -222,6 +279,12 @@ h2 {
     .start:active {
         transform: translateY(3px);
         box-shadow: 0 3px 0 #4f46e5;
+    }
+
+    .msg {
+        height: 15rem;
+        width: 80%;
+        font-size: 1.2rem;
     }
 }
 
